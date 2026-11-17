@@ -1,76 +1,342 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Journal | Sincerely, Srijita</title>
 
-    <meta name="description" content="Every entry from Sincerely, Srijita, newest first.">
+    <meta name="description" content="A collection of entries from Sincerely, Srijita.">
 
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+    <style>
+
+        .journal-page {
+            max-width: 850px;
+            margin: 0 auto;
+            padding-top: 80px;
+            padding-bottom: 100px;
+        }
+
+        .archive-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 45px 0 20px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid #ded5c9;
+            gap: 15px;
+        }
+
+        .archive-count {
+            font-size: 0.8rem;
+            color: #81766e;
+            letter-spacing: 1px;
+        }
+
+        .sort-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sort-control label {
+            font-size: 0.8rem;
+            color: #81766e;
+        }
+
+        .sort-control select {
+            padding: 9px 12px;
+            background: #faf7f1;
+            border: 1px solid #ded5c9;
+            border-radius: 3px;
+            color: #292523;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        .archive-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            counter-reset: none;
+        }
+
+        .archive-item {
+            display: grid;
+            grid-template-columns: 45px 1fr auto;
+            align-items: center;
+            gap: 20px;
+            padding: 25px 5px;
+            border-bottom: 1px solid #ded5c9;
+        }
+
+        .archive-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            color: #a3978d;
+        }
+
+        .archive-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: #292523;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .archive-title:hover {
+            color: #913f42;
+        }
+
+        .archive-date {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.75rem;
+            color: #81766e;
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+        }
+
+        .archive-empty {
+            padding: 35px 0;
+            color: #81766e;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+
+            .journal-page {
+                padding-top: 50px;
+            }
+
+            .archive-controls {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .archive-item {
+                grid-template-columns: 30px 1fr;
+                gap: 12px;
+                padding: 22px 0;
+            }
+
+            .archive-date {
+                grid-column: 2;
+                margin-top: -5px;
+            }
+
+            .archive-title {
+                font-size: 1.1rem;
+            }
+
+        }
+
+    </style>
 </head>
 
 <body>
 
     <header class="header">
-        <a href="index.html" class="logo">Sincerely, Srijita.</a>
+
+        <a href="index.html" class="logo">
+            Sincerely, Srijita.
+        </a>
 
         <nav aria-label="Main">
-            <a href="index.html">Home</a>
-            <a href="journal.html" aria-current="page">Journal</a>
-            <a href="index.html#poetry">Poetry</a>
-            <a href="index.html#about">About</a>
-        </nav>
+    <a href="index.html">Home</a>
+    <a href="journal.html">Journal</a>
+    <a href="poetry.html">Poetry</a>
+    <a href="about.html">About</a>
+</nav>
+
     </header>
+
 
     <main>
 
-        <section class="journal journal-page section">
+        <section class="journal-page">
 
             <div class="section-heading">
+
                 <p class="eyebrow">THE WRITING ROOM</p>
+
                 <h1 class="page-title">The journal.</h1>
-                <p class="page-intro">Every entry, newest first.</p>
+
+                <p class="page-intro">
+                    A record of days, thoughts and everything in between.
+                </p>
+
             </div>
 
-            <!-- NEW ENTRIES GO HERE, AT THE TOP. Copy one whole <article> block and edit it. -->
 
-            <article class="entry">
-                <div class="entry-date">
-                    <span>17</span>
-                    <small>NOV 2026</small>
+            <div class="archive-controls">
+
+                <span class="archive-count" id="entryCount">
+                    1 ENTRY
+                </span>
+
+                <div class="sort-control">
+
+                    <label for="sortOrder">Arrange by</label>
+
+                    <select id="sortOrder">
+
+                        <option value="newest">
+                            Latest to oldest
+                        </option>
+
+                        <option value="oldest">
+                            Oldest to latest
+                        </option>
+
+                    </select>
+
                 </div>
 
-                <div class="entry-content">
-                    <p class="category">LIFE LATELY</p>
-                    <h2 class="entry-title">A place to put my thoughts.</h2>
-                    <p>
-                        Perhaps this is where I begin collecting
-                        the little pieces of my life. The ordinary
-                        days, the extraordinary ones, and everything
-                        I might otherwise forget.
-                    </p>
-                    <span class="entry-footer">A first entry · 1 min read</span>
-                    <a href="entries/first-entry.html" class="read-link">
-                        Read this entry <span aria-hidden="true">↗</span>
+            </div>
+
+
+            <ol class="archive-list" id="archiveList">
+
+                <!--
+                    ADD NEW ENTRIES HERE.
+                    Copy one complete article block.
+                    Change the date, title and link.
+                -->
+
+                <li class="archive-item" data-date="2026-11-17">
+
+                    <span class="archive-number"></span>
+
+                    <a
+                        href="entries/first-entry.html"
+                        class="archive-title"
+                    >
+                        A place to put my thoughts.
                     </a>
-                </div>
-            </article>
+
+                    <time
+                        class="archive-date"
+                        datetime="2026-11-17"
+                    >
+                        17 NOV 2026
+                    </time>
+
+                </li>
+
+
+                <!-- FUTURE ENTRY EXAMPLE:
+
+                <li class="archive-item" data-date="2026-11-20">
+
+                    <span class="archive-number"></span>
+
+                    <a
+                        href="entries/second-entry.html"
+                        class="archive-title"
+                    >
+                        Your second entry title.
+                    </a>
+
+                    <time
+                        class="archive-date"
+                        datetime="2026-11-20"
+                    >
+                        20 NOV 2026
+                    </time>
+
+                </li>
+
+                -->
+
+            </ol>
 
         </section>
 
     </main>
 
+
     <footer>
+
         <p>Written with care, somewhere in the world.</p>
-        <p class="footer-signature">Sincerely, Srijita. ♡</p>
-        <p class="copyright">© 2026 · All rights reserved.</p>
+
+        <p class="footer-signature">
+            Sincerely, Srijita. ♡
+        </p>
+
+        <p class="copyright">
+            © 2026 · All rights reserved.
+        </p>
+
     </footer>
 
+
+    <script>
+
+        const archive = document.getElementById("archiveList");
+
+        const sortOrder = document.getElementById("sortOrder");
+
+        const entryCount = document.getElementById("entryCount");
+
+
+        function arrangeEntries() {
+
+            const entries = Array.from(
+                archive.querySelectorAll(".archive-item")
+            );
+
+            const order = sortOrder.value;
+
+
+            entries.sort((a, b) => {
+
+                const dateA = new Date(a.dataset.date);
+                const dateB = new Date(b.dataset.date);
+
+                if (order === "newest") {
+                    return dateB - dateA;
+                }
+
+                return dateA - dateB;
+
+            });
+
+
+            entries.forEach((entry, index) => {
+
+                entry.querySelector(".archive-number").textContent =
+                    String(index + 1).padStart(2, "0");
+
+                archive.appendChild(entry);
+
+            });
+
+
+            entryCount.textContent =
+                entries.length + (entries.length === 1 ? " ENTRY" : " ENTRIES");
+
+        }
+
+
+        sortOrder.addEventListener("change", arrangeEntries);
+
+
+        arrangeEntries();
+
+    </script>
+
 </body>
+
 </html>
+                                             

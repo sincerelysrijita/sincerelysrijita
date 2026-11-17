@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Poetry | Sincerely, Srijita</title>
+
+    <meta name="description" content="Poems and fragments from Sincerely, Srijita.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+    <style>
+
+        .poetry-page {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 80px 25px 100px;
+        }
+
+        .poem-list {
+            margin-top: 55px;
+        }
+
+        .poem-item {
+            display: grid;
+            grid-template-columns: 45px 1fr auto;
+            align-items: center;
+            gap: 20px;
+            padding: 25px 5px;
+            border-bottom: 1px solid #ded5c9;
+        }
+
+        .poem-number {
+            font-family: 'Playfair Display', serif;
+            color: #a3978d;
+            font-size: 1rem;
+        }
+
+        .poem-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+        }
+
+        .poem-title a {
+            color: #292523;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .poem-title a:hover {
+            color: #913f42;
+        }
+
+        .poem-date {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.75rem;
+            color: #81766e;
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 600px) {
+
+            .poetry-page {
+                padding-top: 50px;
+            }
+
+            .poem-item {
+                grid-template-columns: 30px 1fr;
+                gap: 12px;
+                padding: 22px 0;
+            }
+
+            .poem-date {
+                grid-column: 2;
+                margin-top: -5px;
+            }
+
+            .poem-title {
+                font-size: 1.1rem;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header class="header">
+
+        <a href="index.html" class="logo">
+            Sincerely, Srijita.
+        </a>
+
+        <nav aria-label="Main">
+            <a href="index.html">Home</a>
+            <a href="journal.html">Journal</a>
+            <a href="poetry.html" aria-current="page">Poetry</a>
+            <a href="about.html">About</a>
+        </nav>
+
+    </header>
+
+
+    <!-- POETRY ARCHIVE -->
+
+    <main>
+
+        <section class="poetry-page">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">WORDS & FRAGMENTS</p>
+
+                <h1 class="page-title">The poetry room.</h1>
+
+                <p class="page-intro">
+                    A collection of things written and felt.
+                </p>
+
+            </div>
+
+
+            <div class="poem-list" id="poemList">
+
+                <!-- NEW POEMS GO HERE, AT THE TOP -->
+
+
+                <article class="poem-item">
+
+                    <span class="poem-number">01</span>
+
+                    <h2 class="poem-title">
+                        <a href="entries/poems/first-poem.html">
+                            Poem's I Wouldn't Write
+                        </a>
+                    </h2>
+
+                    <time class="poem-date" datetime="2026-11-17">
+                        17 NOV 2026
+                    </time>
+
+                </article>
+
+
+                <!-- FUTURE POEM EXAMPLE:
+
+                <article class="poem-item">
+
+                    <span class="poem-number">02</span>
+
+                    <h2 class="poem-title">
+                        <a href="poems/second-poem.html">
+                            Your second poem title
+                        </a>
+                    </h2>
+
+                    <time class="poem-date" datetime="2026-11-20">
+                        20 NOV 2026
+                    </time>
+
+                </article>
+
+                -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>Written with care, somewhere in the world.</p>
+
+        <p class="footer-signature">
+            Sincerely, Srijita. ♡
+        </p>
+
+        <p class="copyright">
+            © 2026 · All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
