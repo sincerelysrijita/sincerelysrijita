@@ -1,0 +1,301 @@
+
+/* --------------------------------
+   SINCERELY, SRIJITA.
+   A personal literary archive
+----------------------------------- */
+
+:root {
+    --background: #f5f0e8;
+    --paper: #faf7f1;
+    --text: #292523;
+    --muted: #81766e;
+    --accent: #913f42;
+    --line: #ded5c9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.7;
+}
+
+/* HEADER */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 9%;
+    border-bottom: 1px solid var(--line);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    color: var(--text);
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 570px;
+    padding: 115px 12% 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(64px, 9vw, 110px);
+    font-weight: 400;
+    line-height: 1.08;
+    margin: 28px 0;
+    letter-spacing: -4px;
+}
+
+h1 span {
+    font-style: italic;
+    color: var(--accent);
+}
+
+.intro {
+    max-width: 440px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.read-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 12px;
+    margin-top: 32px;
+    letter-spacing: 1px;
+}
+
+.read-link span {
+    margin-left: 8px;
+}
+
+.hero-note {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+    margin-top: 85px;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* GENERAL SECTIONS */
+
+.section {
+    padding: 90px 12%;
+    border-top: 1px solid var(--line);
+}
+
+.section-heading {
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+}
+
+/* JOURNAL ENTRIES */
+
+.entry {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 35px;
+    padding: 35px 0;
+    border-top: 1px solid var(--line);
+}
+
+.entry-date {
+    display: flex;
+    flex-direction: column;
+    color: var(--accent);
+}
+
+.entry-date span {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+}
+
+.entry-date small {
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.category {
+    color: var(--accent);
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.entry-content > p:not(.category) {
+    color: var(--muted);
+    font-size: 13px;
+    max-width: 600px;
+    margin-top: 12px;
+}
+
+.entry-footer {
+    display: block;
+    color: var(--muted);
+    font-size: 10px;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* POETRY */
+
+.poetry {
+    background: var(--paper);
+}
+
+.poetry > p:not(.eyebrow),
+.about > p:not(.eyebrow) {
+    color: var(--muted);
+    max-width: 520px;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.coming-soon {
+    display: inline-block;
+    margin-top: 28px;
+    color: var(--accent);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+}
+
+/* ABOUT */
+
+.about {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 45px 20px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.footer-signature {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--accent);
+    margin: 12px 0;
+}
+
+.copyright {
+    font-size: 9px;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 650px) {
+
+    .header {
+        flex-direction: column;
+        gap: 18px;
+        padding: 22px 5%;
+    }
+
+    nav {
+        gap: 18px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .hero {
+        padding: 90px 8% 40px;
+        min-height: 500px;
+    }
+
+    h1 {
+        font-size: 66px;
+        letter-spacing: -3px;
+    }
+
+    .section {
+        padding: 65px 8%;
+    }
+
+    .entry {
+        grid-template-columns: 65px 1fr;
+        gap: 18px;
+    }
+
+    h2 {
+        font-size: 34px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    .hero-note {
+        margin-top: 65px;
+    }
+}
