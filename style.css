@@ -520,3 +520,114 @@ footer {
         gap: 10px;
     }
 }
+/* --------------------------------
+   ADDITIONS: paste at the bottom of style.css
+----------------------------------- */
+
+/* Keyboard focus */
+a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+/* Only smooth-scroll for people who haven't asked for less motion.
+   (Delete the plain "html { scroll-behavior: smooth; }" higher up.) */
+@media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+}
+
+/* Make "read-link" margins work */
+.read-link {
+    display: inline-block;
+}
+
+/* Header nav only (so the Previous/Next nav is not affected).
+   Replace your old "nav", "nav a" and "nav a:hover" rules with these. */
+.header nav {
+    display: flex;
+    gap: 30px;
+}
+
+.header nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.header nav a:hover,
+.header nav a[aria-current="page"] {
+    color: var(--accent);
+}
+
+/* Mobile version of the header nav (replace the old "nav" rules in your 650px block) */
+@media (max-width: 650px) {
+    .header nav { gap: 18px; }
+    .header nav a { font-size: 11px; }
+}
+
+/* Journal page heading */
+.page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(44px, 7vw, 64px);
+    font-weight: 400;
+    letter-spacing: -2px;
+    line-height: 1.1;
+    margin: 10px 0 12px;
+}
+
+.page-intro {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* Entry titles on the journal list (an h2 styled like your h3) */
+.entry-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    margin-top: 0;
+}
+
+/* Quote on entry pages: one version, using your variables */
+.diary-body .closing-quote {
+    border: none;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    text-align: center;
+    padding: 25px 0;
+}
+
+.diary-body .closing-quote cite {
+    display: block;
+    margin-top: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    letter-spacing: 1px;
+    color: var(--muted);
+}
+
+/* Bottom "back to journal" link */
+.bottom-link {
+    display: block;
+    text-align: center;
+    margin-top: 45px;
+}
+
+/* Previous / Next links on entry pages */
+a.nav-previous,
+a.nav-next {
+    text-decoration: none;
+}
+
+a.nav-previous:hover p,
+a.nav-next:hover p {
+    color: var(--accent);
+}
+
+/* Slightly better contrast for small grey text */
+:root {
+    --muted: #6f645c;
+}
